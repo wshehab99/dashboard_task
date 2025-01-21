@@ -74,8 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 AssetsManager.extendeLogo,
                 width: 90,
               ),
-              actions: [
-                const Padding(
+              actions: const [
+                Padding(
                   padding: EdgeInsets.only(right: 8.0),
                   child: NotificationButton(),
                 ),
@@ -124,9 +124,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const SizedBox(height: 10),
-                  Text(
-                    "Dashboard",
-                    style: Theme.of(context).textTheme.titleMedium,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Dashboard",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const CalendarWidget(),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   const CardHoverWidget(
@@ -204,9 +210,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Dashboard",
-                          style: Theme.of(context).textTheme.titleMedium,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Dashboard",
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                            const CalendarWidget(),
+                          ],
                         ),
                         const SizedBox(height: 10),
                         const TabletOrDesktopGridView(),
